@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { HashRouter, Routes, Route } from "react-router";
 import MainPage from "./pages/MainPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { fetchCharactersPage } from "./store/features/characters/characterSlice";
@@ -17,13 +17,13 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path={ROUTES.home} element={<MainPage />}></Route>
           <Route path={ROUTES.characters} element={<CharactersPage />}></Route>
           <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
